@@ -1,0 +1,22 @@
+{
+  "exp_name": "qa_central_global",
+  "paradigm": "central_global",
+  "task_type": "qa",
+  "benchmark_path": "env/lang_benchmark/HotPotQA",
+  "experiment_dir": "experiments",
+  "checkpoint_dir": "experiments/ckpt_qa_skills",
+  "num_agents": 2,
+  "num_iterations": 5,
+  "data_limit": 200,
+  "trajectories_per_iteration": 100,
+  "optimizer_workers": 64,
+  "max_workers": 64,
+  "llm": "gpt-4o-mini",
+  "log_level": "INFO",
+  "start_iteration": 0,
+  "train_test_split": 1.0,
+  "split_seed": 42,
+  "include_context": false,
+  "max_search_calls": 3,
+  "search_limit": 5
+}

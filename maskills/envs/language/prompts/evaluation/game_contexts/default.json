@@ -1,0 +1,3 @@
+{
+  "game_context": "## MULTI-AGENT COORDINATION GAME\n\nThis is a cooperative multi-agent environment where agents must work together to achieve a common goal.\n\n### KEY PRINCIPLES:\n- Agents should coordinate their actions\n- Individual success depends on team success\n- Communication and timing are crucial\n- Rewards are typically shared among agents"
+}

@@ -1,0 +1,53 @@
+# Experiment output: trajectories, checkpoints, run logs, figures. Regenerated
+# by the trainers in scripts/; too large and too run-specific for git.
+/experiments/
+/ckpt_policy/
+/logs_runs/
+/analysis/
+/runs/
+*.log
+.env
+
+# Benchmark data. Fetch it yourself — see "Benchmark data" in README.md.
+/data/
+/env/
+
+# Skill libraries: seeds and trained artifacts. No library ships with the
+# repository, and nothing in the code defaults to one — every entry point
+# takes the directory.
+/skills_seed/
+
+# Scratch / superseded files kept locally for reference only
+__trashcan__/
+.git.backup-*/
+
+# Archives & large binaries
+*.zip
+*.pdf
+
+# Secrets / local env
+.env
+.env.*
+*.key
+openai_key.txt
+llm_config.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+/build/
+/dist/
+.eggs/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Editor / OS / agent session state
+.claude/
+.vscode/
+.idea/
+.DS_Store

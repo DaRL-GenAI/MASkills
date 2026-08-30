@@ -1,0 +1,71 @@
+cff-version: 1.2.0
+message: "If you use MASkills in your research, please cite the paper below."
+title: "MASkills: Continual Skills Optimization for Multi-Agent LLM Systems"
+abstract: >-
+  Multi-agent LLM systems accumulate task knowledge in a single monolithic
+  prompt, where every update overwrites unrelated competence and no individual
+  piece of knowledge can be credited, revised, or retired on its own. MASkills
+  represents that knowledge as a discrete, persistent skill library and evolves
+  it with four typed operators - induct, refine, consolidate, prune - under
+  per-skill credit assignment and a held-out validation gate that rolls back a
+  candidate library that does not hold up.
+type: software
+license: MIT
+repository-code: "https://github.com/DaRL-GenAI/MASkills"
+authors:
+  - family-names: Yao
+    given-names: Huaiyuan
+  - family-names: Da
+    given-names: Longchao
+  - family-names: Liu
+    given-names: Xiaoou
+  - family-names: Fleming
+    given-names: Charles
+  - family-names: Chen
+    given-names: Tianlong
+  - family-names: Wei
+    given-names: Hua
+preferred-citation:
+  type: conference-paper
+  title: "MASkills: Continual Skills Optimization for Multi-Agent LLM Systems"
+  collection-title: "Findings of the Association for Computational Linguistics: EMNLP 2026"
+  year: 2026
+  authors:
+    - family-names: Yao
+      given-names: Huaiyuan
+    - family-names: Da
+      given-names: Longchao
+    - family-names: Liu
+      given-names: Xiaoou
+    - family-names: Fleming
+      given-names: Charles
+    - family-names: Chen
+      given-names: Tianlong
+    - family-names: Wei
+      given-names: Hua
+  # TODO: replace with the MASkills arXiv identifier once it is posted, and add
+  # the ACL Anthology pages/DOI when the Findings volume is published.
+  # identifiers:
+  #   - type: other
+  #     value: "arXiv:XXXX.XXXXX"
+  #     description: arXiv preprint
+references:
+  - type: software
+    title: "LangMARL: Natural Language Multi-Agent Reinforcement Learning"
+    repository-code: "https://github.com/DaRL-GenAI/LangMARL"
+    notes: >-
+      The CTDE substrate MASkills builds on: trajectory collection, the
+      centralized critic, and the language policy-gradient optimizer.
+    authors:
+      - family-names: Yao
+        given-names: Huaiyuan
+      - family-names: Da
+        given-names: Longchao
+      - family-names: Liu
+        given-names: Xiaoou
+      - family-names: Fleming
+        given-names: Charles
+      - family-names: Chen
+        given-names: Tianlong
+      - family-names: Wei
+        given-names: Hua

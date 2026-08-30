@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "maskills"
+version = "1.0.0"
+description = "Continual skills optimization for multi-agent LLM systems"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Huaiyuan Yao"},
+    {name = "Longchao Da"},
+    {name = "Xiaoou Liu"},
+    {name = "Charles Fleming"},
+    {name = "Tianlong Chen"},
+    {name = "Hua Wei"},
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "openai>=1.0",
+    "tqdm",
+]
+
+[project.urls]
+Homepage = "https://github.com/DaRL-GenAI/MASkills"
+Repository = "https://github.com/DaRL-GenAI/MASkills"
+"Underlying framework" = "https://github.com/DaRL-GenAI/LangMARL"
+
+[project.optional-dependencies]
+# GAIA attachment parsing (xlsx / pdf / docx / pptx). GAIA's SEARCH and BROWSE
+# tools speak to Tavily over urllib and need only TAVILY_API_KEY.
+gaia = ["openpyxl", "pdfplumber", "python-docx", "python-pptx"]
+# HotpotQA / MATH / HumanEval: F1 and BLEU metrics, the sympy sandbox, and the
+# MediaWiki search client behind the wiki search tool.
+language = ["nltk", "sympy", "requests"]
+# Training-curve figures (scripts/plot_training_curves.py).
+analysis = ["matplotlib", "numpy"]
+all = ["maskills[gaia,language,analysis]"]
+dev = ["pytest", "pytest-cov", "ruff", "mypy", "pre-commit"]
+
+[project.scripts]
+maskills = "maskills.cli.train:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["maskills*"]
+
+[tool.setuptools.package-data]
+"maskills.envs.language" = ["prompts/**/*.json", "tools/*.md"]
+"maskills.envs.locomo" = ["prompts/*.md"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = [
+    "E501",  # long lines are mostly prompt text
+    "E741",  # single-letter names match the paper's notation
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
